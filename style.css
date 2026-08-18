@@ -1,0 +1,99 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+body{
+    background-image: url('space.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#pre_mypic{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column
+    
+}
+#mypic{
+    height: 30vh;
+    width: 30vh;
+    align-items: center;
+    justify-content: center;
+    background-image: url('MyPhoto.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 60px 20px rgba(254, 219, 17, 0.35);
+}
+
+.divider{
+    border: none;
+    height: 2px;
+    width: 40%;
+    background-color: rgba(255, 122, 122, 0.5);
+    border-radius: 10px;
+}
+
+#redirect_terminal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    height: 20vh;
+    width: 40vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#redirect_terminal::-webkit-scrollbar {
+    height: 4px;
+    width: 5px;
+    background: rgba(124, 52, 137, 0.618);
+    border-radius: 20px;
+}
+#redirect_terminal::-webkit-scrollbar-thumb {
+    background: #f1f1f172;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+}
+#redirect_terminal::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+#terminal{
+    display: flex;
+    height: 30vh;
+    width: 45vw;
+    border-radius: 11px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 89, 255, 0.35);
+    box-shadow: 0 0 60px 20px rgba(0, 89, 255, 0.35);
+    border: 2px solid rgba(0, 0, 0, 0.577);
+    flex-direction: column;
+    padding: 10px;
+}
+#bio-text{
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+.terminal-text{
+    text-align: center;
+    font-weight: bold;
+    margin: 8px;
+}
