@@ -82,8 +82,8 @@ body{
     align-items: center;
     gap: 10px;
     padding: 10px;
-    height: 20vh;
-    width: 40vw;
+    height: 80%;
+    width: 90%;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     overflow-y: auto;
@@ -106,8 +106,8 @@ body{
 }
 #terminal{
     display: flex;
-    height: 30vh;
-    width: 45vw;
+    height: 300px;
+    width: 400px;
     border-radius: 11px;
     align-items: center;
     justify-content: center;
