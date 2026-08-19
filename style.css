@@ -117,7 +117,7 @@ body{
     flex-direction: column;
     padding: 10px;
 }
-#bio-text{
+.bio-text{
     color: rgb(255, 251, 0);
     text-align: center;
     margin: 0;
