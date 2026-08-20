@@ -23,6 +23,7 @@ body{
     align-items: center;
     height: 100%;
     width: 95%;
+    user-select: none;
 }
 
 #start-window{
@@ -101,4 +102,36 @@ body{
     background-color: green;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.start-button{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    cursor: pointer;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 5px rgb(255, 255, 255);
+    left: 15px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: all 0.3s ease-in-out;
+
+    perspective: 500px;
+}
+.start-button:hover{
+    transform: scale(1.1) translateY(-3px) rotateX(15deg) rotateY(15deg) rotateZ(5deg);
+
+
+    box-shadow: inset 0px 0px 10px rgb(21, 2, 2), 
+                0px 8px 15px rgba(252, 255, 154, 0.858);
+
+}
+
+#start-window-start-button{
+    top: 50px;
+    background-image: url('start-window.jpeg');
 }

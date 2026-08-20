@@ -51,15 +51,28 @@ dragElement(document.getElementById("start-window"));
 
 
 const closeButtons = document.querySelectorAll(".close-btn");
+const openButtons = document.querySelectorAll(".start-button");
 
 function closeWindow(windowId){
     const windowElement = document.getElementById(windowId);
     windowElement.style.display = "none";
 }
 
+function openWindow(windowId){
+    const windowElement = document.getElementById(windowId);
+    windowElement.style.display = "flex";
+}
+
 closeButtons.forEach(button => {
   button.addEventListener("click", function(e) {
     const windowId = e.target.id.slice(0, -5);
     closeWindow(windowId);
+  });
+});
+
+openButtons.forEach(button => {
+  button.addEventListener("click", function(e) {
+    const windowId = e.target.id.slice(0, -13);
+    openWindow(windowId);
   });
 });
