@@ -80,6 +80,7 @@ body{
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
+    user-select: none; 
 }
 .close-btn-2{
     position: absolute;

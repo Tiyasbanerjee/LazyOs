@@ -49,3 +49,17 @@ function dragElement(elmnt){
 // its the logic to move elements
 dragElement(document.getElementById("start-window"));
 
+
+const closeButtons = document.querySelectorAll(".close-btn");
+
+function closeWindow(windowId){
+    const windowElement = document.getElementById(windowId);
+    windowElement.style.display = "none";
+}
+
+closeButtons.forEach(button => {
+  button.addEventListener("click", function(e) {
+    const windowId = e.target.id.slice(0, -5);
+    closeWindow(windowId);
+  });
+});
