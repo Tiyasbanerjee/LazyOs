@@ -25,19 +25,21 @@ body{
     width: 95%;
     user-select: none;
 }
-
-#start-window{
-    display: flex;
+.window{
+    display: none;
     flex-direction: column;
     position: absolute;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+}
+
+#start-window{
     height: 300px;
     width: 400px;
     background-color: rgba(56, 199, 255, 0.793);
     left: 80px;
     top: 100px;
-    border-radius: 10px;
     border: 1px solid rgb(255, 255, 255);
     padding :1px
 }
@@ -134,4 +136,62 @@ body{
 #start-window-start-button{
     top: 50px;
     background-image: url('start-window.jpeg');
+}
+
+#note-start-button{
+    top: 130px;
+    background-image: url('note.jpeg');
+}
+
+#note{
+    height: 700px;
+    width: 600px;
+    background-color: rgba(56, 255, 255, 0.793);
+    left: 80px;
+    top: 100px;
+    border: 1px solid rgb(255, 255, 255);
+    padding :1px
+
+}
+
+#wallpaper-start-button{
+    top: 210px;
+    background-image: url('choose wallpaper.jpeg');
+}
+
+#wallpaper{
+    height: 700px;
+    width: 600px;
+    background-color: rgba(56, 255, 255, 0.793);
+    left: 80px;
+    top: 100px;
+    border: 1px solid rgb(255, 255, 255);
+    padding :1px
+}
+#music-start-button{
+    top: 290px;
+    background-image: url('music.jpeg');
+}
+
+#music{
+    height: 700px;
+    width: 600px;
+    background-color: rgba(56, 255, 255, 0.793);
+    left: 80px;
+    top: 100px;
+    border: 1px solid rgb(255, 255, 255);
+    padding :1px
+}
+#calculator-start-button{
+    top: 370px;
+    background-image: url('calculator.jpeg');
+}
+#calculator{
+    height: 700px;
+    width: 600px;
+    background-color: rgba(56, 255, 255, 0.793);
+    left: 80px;
+    top: 100px;
+    border: 1px solid rgb(255, 255, 255);
+    padding :1px
 }

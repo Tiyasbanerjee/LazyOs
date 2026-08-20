@@ -48,7 +48,10 @@ function dragElement(elmnt){
 }
 // its the logic to move elements
 dragElement(document.getElementById("start-window"));
-
+dragElement(document.getElementById("note"));
+dragElement(document.getElementById("wallpaper"));
+dragElement(document.getElementById("music"));
+dragElement(document.getElementById("calculator"));
 
 const closeButtons = document.querySelectorAll(".close-btn");
 const openButtons = document.querySelectorAll(".start-button");
