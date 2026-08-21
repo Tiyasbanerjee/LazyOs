@@ -8,7 +8,12 @@ function updateTime() {
 setInterval(updateTime, 1000);
 
 
+
 function dragElement(elmnt){
+
+    const maxLeft = window.innerWidth - elmnt.offsetWidth;
+    const maxTop = window.innerHeight - elmnt.offsetHeight - 30;
+
     let initX = 0;
     let initY = 0;
     let currentX = 0;
@@ -30,17 +35,33 @@ function dragElement(elmnt){
         document.onmouseup = stopDragging;
         document.onmousemove = ElementDrag;
     }
-    function ElementDrag(e){
-        e=e|| window.event;
-        e.preventDefault();
-        currentX = initX - e.clientX;
-        currentY = initY - e.clientY;
-        initX = e.clientX;
-        initY = e.clientY;
+    function ElementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
 
-        elmnt.style.top = (elmnt.offsetTop - currentY) + "px";
-        elmnt.style.left = (elmnt.offsetLeft - currentX) + "px";
-    }
+    let deltaX = e.clientX - initX; 
+    let deltaY = e.clientY - initY;
+
+    let targetLeft = elmnt.offsetLeft + deltaX; 
+    let targetTop  = elmnt.offsetTop + deltaY;
+
+    initX = e.clientX;
+    initY = e.clientY;
+
+
+    const minLeft = 0;
+    const maxLeft = window.innerWidth - elmnt.offsetWidth;
+    
+    const minTop = 35;
+    const maxTop = window.innerHeight - elmnt.offsetHeight;
+
+
+    let clampedLeft = Math.max(minLeft, Math.min(targetLeft, maxLeft));
+    let clampedTop = Math.max(minTop, Math.min(targetTop, maxTop));
+
+    elmnt.style.left = clampedLeft + "px";
+    elmnt.style.top = clampedTop + "px";
+}
     function stopDragging(){
         document.onmouseup = null;
         document.onmousemove = null;
@@ -55,10 +76,6 @@ dragElement(document.getElementById("calculator"));
 
 const closeButtons = document.querySelectorAll(".close-btn");
 const openButtons = document.querySelectorAll(".start-button");
-
-const top_bar_hight = 30;
-const maxLeft = window.innerWidth - 100;
-const maxTop = window.innerHeight - 100;
 
 function closeWindow(windowId){
     const windowElement = document.getElementById(windowId);
@@ -82,4 +99,13 @@ openButtons.forEach(button => {
     const windowId = e.target.id.slice(0, -13);
     openWindow(windowId);
   });
+});
+
+const windowElements = document.querySelectorAll(".window");
+let topZIndex = 100;
+windowElements.forEach(windowElement => {
+    windowElement.addEventListener("mouseenter", function() {
+        topZIndex++;
+        windowElement.style.zIndex = topZIndex;
+    });
 });
