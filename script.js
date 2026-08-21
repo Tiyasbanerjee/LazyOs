@@ -56,6 +56,10 @@ dragElement(document.getElementById("calculator"));
 const closeButtons = document.querySelectorAll(".close-btn");
 const openButtons = document.querySelectorAll(".start-button");
 
+const top_bar_hight = 30;
+const maxLeft = window.innerWidth - 100;
+const maxTop = window.innerHeight - 100;
+
 function closeWindow(windowId){
     const windowElement = document.getElementById(windowId);
     windowElement.style.display = "none";
