@@ -109,3 +109,30 @@ windowElements.forEach(windowElement => {
         windowElement.style.zIndex = topZIndex;
     });
 });
+
+
+
+const noteBookTabs = document.querySelectorAll(".note-book-tab");
+
+noteBookTabs.forEach(tab => {
+    tab.addEventListener("click", function() {
+        noteBookTabs.forEach(t => t.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
+
+
+const noteBookSections = document.querySelectorAll(".note-book");
+
+noteBookTabs.forEach(tab => {
+    tab.addEventListener("click", function() {
+        const targetId = this.id.replace("-tab", "");
+        noteBookSections.forEach(section => {
+            if (section.id === targetId) {
+                section.style.display = "flex";
+            } else {
+                section.style.display = "none";
+            }
+        });
+    });
+});
