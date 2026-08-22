@@ -1,10 +1,10 @@
 <h1>Lazy OS</h1>
 <h2>it is build by a lazy for the lazy</h2>
-<h3>wait what!? you are also lazy ? then give a Try to <a href=" https://tiyasbanerjee.github.io/LazyOs/">Lazy os</a>.</h3>
+<h3>wait what!? you are also lazy ? then give a Try to <a href="https://tiyasbanerjee.github.io/LazyOs/">Lazy os</a>.</h3>
 <h3>lazyOS is capable of =></h3>
 
 * dragging windows
-* when hovouring on a window , that will pop infornt of other windows
+* when hovering over a window , that will pop infornt of other windows
 * user can write note on the note app
 * user can explore some photos in photo app
 * and the windows are also closable
