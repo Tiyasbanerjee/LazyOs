@@ -70,7 +70,7 @@ function dragElement(elmnt){
 // its the logic to move elements
 dragElement(document.getElementById("start-window"));
 dragElement(document.getElementById("note"));
-dragElement(document.getElementById("wallpaper"));
+dragElement(document.getElementById("gallery"));
 dragElement(document.getElementById("music"));
 dragElement(document.getElementById("calculator"));
 
@@ -136,3 +136,45 @@ noteBookTabs.forEach(tab => {
         });
     });
 });
+
+
+
+const resources = [
+  { name: "a lazy person", path: "./Resources/a lazy person.png" },
+  { name: "my thoughts", path: "./Resources/my thoughts.jpg" },
+  { name: "choose wallpaper", path: "./Resources/choose wallpaper.jpg" },
+  { name: "music", path: "./Resources/music.jpg" },
+  { name: "calender", path: "./Resources/calender.jpg" },
+  { name: "my photo", path: "./Resources/my photo.jpg" },
+  { name: "wallpaper", path: "./Resources/wallpaper.jpg" },
+  { name: "lazy", path: "./Resources/LAZY.png" },
+  {name: "main back", path: "./Resources/main back.jpg"},
+  {name: "not so lazy", path: "./Resources/not so lazy.jpg"},
+];
+
+let currentPhotoIndex = 1;
+
+const photoElement = document.getElementById("photo-display");
+const photoNameElement = document.getElementById("photo-name");
+
+function displayPhoto(index){
+    const resource = resources[index];
+    photoElement.style.backgroundImage = `url('${encodeURI(resource.path)}')`;
+    photoNameElement.textContent = resource.name;
+}
+
+const previousButton = document.getElementById("previous-photo");
+const nextButton = document.getElementById("next-photo");
+
+nextButton.addEventListener("click", function() {
+  currentPhotoIndex = (currentPhotoIndex + 1) % resources.length;
+  displayPhoto(currentPhotoIndex);
+});
+
+previousButton.addEventListener("click", function() {
+  currentPhotoIndex = (currentPhotoIndex - 1 + resources.length) % resources.length;
+  displayPhoto(currentPhotoIndex);
+});
+
+// Add this line at the very bottom of script.js
+displayPhoto(currentPhotoIndex);
