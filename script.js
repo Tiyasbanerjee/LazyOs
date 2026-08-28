@@ -72,7 +72,7 @@ dragElement(document.getElementById("start-window"));
 dragElement(document.getElementById("note"));
 dragElement(document.getElementById("gallery"));
 dragElement(document.getElementById("clock"));
-dragElement(document.getElementById("calculator"));
+dragElement(document.getElementById("message"));
 
 const closeButtons = document.querySelectorAll(".close-btn");
 const openButtons = document.querySelectorAll(".start-button");

@@ -182,14 +182,14 @@ body{
     border: 1px solid rgb(255, 255, 255);
     padding :1px;
 }
-#calculator-start-button{
+#message-start-button{
     top: 370px;
     background-image: url('Resources/calender.jpg');
 }
-#calculator{
-    height: 700px;
+#message{
+    height: 800px;
     width: 600px;
-    background-color: rgba(56, 255, 255, 0.793);
+    background-color: rgba(36, 46, 79, 0.793);
     left: 80px;
     top: 100px;
     border: 1px solid rgb(255, 255, 255);
@@ -390,3 +390,12 @@ body{
     }
 }
 
+#message-box{
+    width: 90%;
+    height: 93.5%;
+    border: 1px solid rgb(0, 30, 255);
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(255, 85, 85, 0.891);
+}
