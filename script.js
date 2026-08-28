@@ -71,7 +71,7 @@ function dragElement(elmnt){
 dragElement(document.getElementById("start-window"));
 dragElement(document.getElementById("note"));
 dragElement(document.getElementById("gallery"));
-dragElement(document.getElementById("music"));
+dragElement(document.getElementById("clock"));
 dragElement(document.getElementById("calculator"));
 
 const closeButtons = document.querySelectorAll(".close-btn");
@@ -178,3 +178,25 @@ previousButton.addEventListener("click", function() {
 
 // Add this line at the very bottom of script.js
 displayPhoto(currentPhotoIndex);
+
+// clock logic
+
+const clockHours = document.getElementById('clock-hours');
+const clockMunite = document.getElementById('clock-munite');
+const clockColon = document.getElementById('clock-colon');
+
+function updateClock() {
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    clockHours.textContent = hours;
+    clockMunite.textContent = minutes;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
