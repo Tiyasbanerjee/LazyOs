@@ -204,9 +204,9 @@ setInterval(updateClock, 1000);
 // music logic
 
 const Songs = [
-    "/Resources/music/music-1.mp3",
-    "/Resources/music/music-2.mp3",
-    "/Resources/music/music-3.mp3"
+    "./Resources/music/music-1.mp3",
+    "./Resources/music/music-2.mp3",
+    "./Resources/music/music-3.mp3"
 ];
 
 let currentSongIndex = 0;
