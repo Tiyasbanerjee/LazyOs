@@ -73,6 +73,7 @@ dragElement(document.getElementById("note"));
 dragElement(document.getElementById("gallery"));
 dragElement(document.getElementById("clock"));
 dragElement(document.getElementById("message"));
+dragElement(document.getElementById("music"));
 
 const closeButtons = document.querySelectorAll(".close-btn");
 const openButtons = document.querySelectorAll(".start-button");
@@ -143,7 +144,7 @@ const resources = [
   { name: "a lazy person", path: "./Resources/a lazy person.png" },
   { name: "my thoughts", path: "./Resources/my thoughts.jpg" },
   { name: "choose wallpaper", path: "./Resources/choose wallpaper.jpg" },
-  { name: "music", path: "./Resources/music.jpg" },
+  { name: "earth is crying", path: "./Resources/music.jpg" },
   { name: "calender", path: "./Resources/calender.jpg" },
   { name: "my photo", path: "./Resources/my photo.jpg" },
   { name: "wallpaper", path: "./Resources/wallpaper.jpg" },
@@ -199,4 +200,65 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+// music logic
+
+const Songs = [
+    "/Resources/music/music-1.mp3",
+    "/Resources/music/music-2.mp3",
+    "/Resources/music/music-3.mp3"
+];
+
+let currentSongIndex = 0;
+
+const playButton = document.getElementById('play-pause-btn');
+const priviousMusicButton = document.getElementById('prev-btn');
+const nextMusicButton = document.getElementById('next-btn');
+const cd = document.getElementById('cd');
+
+let isPlaying = false;
+const currentSong = Songs[currentSongIndex];
+const audio = new Audio(currentSong);
+
+// when changeing music, its changeing index, and helper function loads new song and update ui 
+function playCurrentTrack() {
+    audio.src = Songs[currentSongIndex];
+
+    isPlaying = false;
+    playButton.innerHTML = '&#9654;';
+    cd.classList.remove('playing');
+}
+
+// privious and next buttons
+priviousMusicButton.addEventListener('click', function() {
+    currentSongIndex = (currentSongIndex - 1 + Songs.length) % Songs.length;
+    playCurrentTrack();
+});
+nextMusicButton.addEventListener('click', function() {
+    currentSongIndex = (currentSongIndex + 1) % Songs.length;
+    playCurrentTrack();
+});
+
+playButton.addEventListener('click', function() {
+    isPlaying = !isPlaying;
+
+    if (isPlaying) {
+        playButton.innerHTML = '&#10074;&#10074;';
+        cd.classList.add('playing');
+
+        audio.play()
+
+    } else {
+        audio.pause()
+        playButton.innerHTML = '&#9654;';
+        cd.classList.remove('playing');
+    }
+});
+
+audio.addEventListener('ended', () => {
+    isPlaying = false;
+    playButton.innerHTML = '&#9654;';
+    cd.classList.remove('playing');
+});
+
 

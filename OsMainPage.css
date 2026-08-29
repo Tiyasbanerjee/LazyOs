@@ -196,6 +196,21 @@ body{
     padding :1px;
 }
 
+#music-start-button{
+    top: 450px;
+    background-image: url('Resources/music.jpg');
+}
+#music{
+    height: 500px;
+    width: 500px;
+    background-color: rgba(255, 196, 70, 0.883);
+    left: 80px;
+    top: 100px;
+    border: 1px solid rgb(255, 255, 255);
+    padding :1px;
+}
+
+
 .note-book{
     display: flex;
     position: absolute;
@@ -398,4 +413,79 @@ body{
     padding: 10px;
     box-sizing: border-box;
     background-color: rgba(255, 85, 85, 0.891);
+}
+#music-box{
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content:flex-end ;
+    align-items:center;
+    flex-direction: column;
+    gap: 10%;
+}
+#cd{
+    height: 25vh;
+    width: 25vh;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.5), rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.588);
+
+    animation: spin 4s linear infinite;
+    animation-play-state: paused;
+}
+
+#cd.playing {
+    animation-play-state: running;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#player{
+    height: 18%;
+    width: 80%;
+    border-radius: 3rem;
+    background-color: rgba(148, 255, 148, 0.973);
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    gap: 1.5rem;
+}
+
+.music-ctrl-btn{
+    background-color: rgba(243, 146, 146, 0.5);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(0, 0, 0);
+
+}
+
+.music-ctrl-btn:hover{
+    background-color: rgba(225, 255, 225, 0.897);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.866);
+    transform: scale(1.1);
+}
+.music-ctrl-btn:active {
+    transform: scale(0.95);
+}
+
+#play-pause-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
 }
