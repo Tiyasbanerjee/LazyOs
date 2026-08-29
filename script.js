@@ -217,13 +217,18 @@ const nextMusicButton = document.getElementById('next-btn');
 const cd = document.getElementById('cd');
 
 let isPlaying = false;
-const currentSong = Songs[currentSongIndex];
-const audio = new Audio(currentSong);
+let currentSong = Songs[currentSongIndex]; // load for the first time
+let audio_url = encodeURI(currentSong); // make the url
+let audio = new Audio(currentSong); // create audio object
 
 // when changeing music, its changeing index, and helper function loads new song and update ui 
-function playCurrentTrack() {
-    audio.src = Songs[currentSongIndex];
+function changeCurrentTrack() {
+    audio.pause(); //stop the privious audio
+    audio_url = encodeURI(Songs[currentSongIndex]); //load the new song
+    audio.src = audio_url; // update url
+    audio.load(); // load it to play
 
+    // change ui, waiting for user to confirm play
     isPlaying = false;
     playButton.innerHTML = '&#9654;';
     cd.classList.remove('playing');
@@ -232,11 +237,11 @@ function playCurrentTrack() {
 // privious and next buttons
 priviousMusicButton.addEventListener('click', function() {
     currentSongIndex = (currentSongIndex - 1 + Songs.length) % Songs.length;
-    playCurrentTrack();
+    changeCurrentTrack();
 });
 nextMusicButton.addEventListener('click', function() {
     currentSongIndex = (currentSongIndex + 1) % Songs.length;
-    playCurrentTrack();
+    changeCurrentTrack();
 });
 
 playButton.addEventListener('click', function() {
