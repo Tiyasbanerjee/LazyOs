@@ -266,4 +266,15 @@ audio.addEventListener('ended', () => {
     cd.classList.remove('playing');
 });
 
+// motivational quotes logic  
+const qute_box = document.getElementById('middle-bar-for-quote');
+
+fetch("https://dummyjson.com/quotes/random")
+  .then(response => response.json())
+  .then(data => {
+    if (qute_box) {
+      qute_box.textContent = data.quote;   
+      console.log(data.quote);
+    }
+  })
 
