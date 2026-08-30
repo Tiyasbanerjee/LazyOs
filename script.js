@@ -74,6 +74,7 @@ dragElement(document.getElementById("gallery"));
 dragElement(document.getElementById("clock"));
 dragElement(document.getElementById("message"));
 dragElement(document.getElementById("music"));
+dragElement(document.getElementById("browser"));
 
 const closeButtons = document.querySelectorAll(".close-btn");
 const openButtons = document.querySelectorAll(".start-button");
@@ -151,6 +152,7 @@ const resources = [
   { name: "lazy", path: "./Resources/LAZY.png" },
   {name: "main back", path: "./Resources/main back.jpg"},
   {name: "not so lazy", path: "./Resources/not so lazy.jpg"},
+  {name:"a world after the horizon", path: "./Resources/browser.jpg"},
 ];
 
 let currentPhotoIndex = 1;
@@ -278,3 +280,28 @@ fetch("https://dummyjson.com/quotes/random")
     }
   })
 
+
+// browser logic
+const searchInput = document.getElementById('search-bar');
+const searchButton = document.getElementById('search-btn');
+
+function doSearch(query){
+    if (query) {
+        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        window.open(searchUrl, '_blank');
+    }
+}
+
+searchButton.addEventListener('click', function() {
+    const query = searchInput.value.trim();
+    doSearch(query);
+    searchInput.value = '';
+});
+
+searchInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        const query = searchInput.value.trim();
+        doSearch(query);
+        searchInput.value = '';
+    }
+});
