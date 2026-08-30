@@ -75,6 +75,7 @@ dragElement(document.getElementById("clock"));
 dragElement(document.getElementById("message"));
 dragElement(document.getElementById("music"));
 dragElement(document.getElementById("browser"));
+dragElement(document.getElementById("calculator"));
 
 const closeButtons = document.querySelectorAll(".close-btn");
 const openButtons = document.querySelectorAll(".start-button");
@@ -153,6 +154,7 @@ const resources = [
   {name: "main back", path: "./Resources/main back.jpg"},
   {name: "not so lazy", path: "./Resources/not so lazy.jpg"},
   {name:"a world after the horizon", path: "./Resources/browser.jpg"},
+  {name: "look at me", path: "./Resources/calculator.jpg"}
 ];
 
 let currentPhotoIndex = 1;
@@ -305,3 +307,37 @@ searchInput.addEventListener('keypress', function(event) {
         searchInput.value = '';
     }
 });
+
+
+// calculator logic
+
+const calculatorDisplay = document.getElementById('cal-display');
+const calculatorButtons = document.querySelectorAll('.cal-btn');
+
+calculatorButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const value = this.dataset.value;
+        if (value === 'C') {
+            calculatorDisplay.value = '';
+        } else if (value === '=') {
+            try {
+                val = eval(calculatorDisplay.value);
+
+            } catch (error) {
+                val = 'Error';
+            }
+
+
+            if(typeof val === 'number' && !isNaN(val)){
+                calculatorDisplay.value = val;
+            }else{
+                calculatorDisplay.value = '';
+            }
+
+
+        }else {
+            calculatorDisplay.value += value;
+        }
+    });
+});
+

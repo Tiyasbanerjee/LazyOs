@@ -567,3 +567,93 @@ body{
     border-radius: 20px;
     padding-left: 10px;
 }
+
+#calculator-start-button{
+    top: 610px;
+    background-image: url('Resources/calculator.jpg');
+}
+
+#calculator{
+    height: 500px;
+    width: 400px;
+
+    background-image: url('Resources/calculator.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    top: 100px;
+    left: 80px;
+}
+
+#cal-body{
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.339);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.478);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    height: 89%;
+    width: 95%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#cal-display{
+    text-align: right;
+
+    height: 13%;
+    width: 90%;
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    background-color: beige;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+#cal-buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+
+    height: 75%;
+    width: 90%;
+}
+
+.cal-btn{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    transition: all 0.3s ease-in-out;
+}
+
+.cal-btn:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.cal-btn:active{
+    transform: scale(0.95);
+}
